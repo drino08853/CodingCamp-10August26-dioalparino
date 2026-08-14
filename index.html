@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <div class="dashboard-wrapper">
+
+      <!-- CLOCK AND GREETING -->
+      <section class="card card-clock">
+        <div id="clock-time" class="clock-time"></div>
+        <div id="clock-date" class="clock-date"></div>
+        <div id="clock-greeting" class="clock-greeting"></div>
+        <div class="name-input-group">
+          <input type="text" id="name-input" placeholder="Masukkan namamu..." autocomplete="off" />
+          <button class="btn-primary" id="btn-save-name">Save</button>
+        </div>
+      </section>
+
+      <!-- GRID: TIMER + TASKS + QUICK LINKS -->
+      <div class="dashboard-grid">
+
+        <!-- FOCUS TIMER -->
+        <section class="card card-timer">
+          <h2 class="card-title">Focus Timer</h2>
+          <div id="timer-display" class="timer-display"></div>
+          <div class="duration-input-group">
+            <label for="timer-duration-input">Durasi (menit):</label>
+            <input type="number" id="timer-duration-input" value="25" min="1" max="120" />
+            <button id="btn-set-duration">Set</button>
+          </div>
+          <div class="timer-controls">
+            <button class="btn-primary" id="btn-start">Start</button>
+            <button class="btn-secondary" id="btn-stop">Stop</button>
+            <button class="btn-secondary" id="btn-reset">Reset</button>
+          </div>
+        </section>
+
+        <!-- TASKS -->
+        <section class="card card-tasks">
+          <div class="task-header">
+            <h2 class="card-title">Tasks</h2>
+            <select id="task-sort">
+              <option value="default">Urutan Asli</option>
+              <option value="az">A → Z</option>
+              <option value="za">Z → A</option>
+              <option value="done">Selesai Dulu</option>
+              <option value="undone">Belum Selesai Dulu</option>
+            </select>
+          </div>
+          <div class="task-input-group">
+            <input type="text" id="task-input" placeholder="Add a new task..." autocomplete="off" />
+            <button class="btn-primary" id="btn-add-task">Add</button>
+          </div>
+          <ul class="task-list" id="task-list">
+            <!-- diisi otomatis oleh JavaScript -->
+          </ul>
+        </section>
+
+         <!-- GRID: TIMER + TASKS + QUICK LINKS -->
+      <div class="dashboard-grid">
+        <!-- QUICK LINKS — span 2 kolom -->
+        <section class="card card-quicklinks">
+          <h2 class="card-title">Quick Links</h2>
+          <div class="quicklink-input-group">
+            <input type="text" id="quicklink-name" placeholder="Link name" autocomplete="off" />
+            <input type="url" id="quicklink-url" placeholder="URL" autocomplete="off" />
+            <button class="btn-primary" id="btn-add-link">Add Link</button>
+          </div>
+          <div class="quicklink-list" id="quicklink-list"></div>
+        </section>
+          </div>
+      </div>
+      <!-- end dashboard-grid -->
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
