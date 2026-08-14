@@ -264,11 +264,7 @@ renderTasks();
 // =====================
 // QUICK LINKS
 // =====================
-let links = JSON.parse(localStorage.getItem('links')) || [
-  { name: 'Google',   url: 'https://google.com' },
-  { name: 'Gmail',    url: 'https://gmail.com' },
-  { name: 'Calendar', url: 'https://calendar.google.com' }
-];
+let links = JSON.parse(localStorage.getItem('links')) || [];
 
 const quicklinkName = document.getElementById('quicklink-name');
 const quicklinkUrl  = document.getElementById('quicklink-url');
